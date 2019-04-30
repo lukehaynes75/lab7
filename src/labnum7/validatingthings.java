@@ -25,6 +25,25 @@ public class validatingthings {
 			System.out.println("invalid date");
 		}
 		
+		
+		System.out.println("Please enter your first name.");
+		String firstName = scan.next();
+		boolean nameCheck = nameVal(firstName);
+		if(nameCheck == true) {
+			System.out.println("Valid name");
+		}else {
+			System.out.println("Not a valid name");
+		}
+		
+	}
+	public static boolean nameVal(String name) {
+		boolean nameTest = Pattern.matches("^[A-Z]{1}[a-z]{1,29}$", name);
+		
+			if(nameTest == true) {
+				return true;
+			}else {
+				return false;
+			}
 	}
 	
 	public static boolean phoneNumVal(String num) {
@@ -45,5 +64,4 @@ public class validatingthings {
 			return false;
 		}
 	}
-	
 }
